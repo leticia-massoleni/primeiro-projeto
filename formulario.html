@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo</title>
+    
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1 style="color: rgb(122,159,194);">SELECIONE UMA DAS OPÇÕES ABAIXO: </h1>
+        <input type="text" name="blur" id="blur" onblur="FuncaoBlur()" placeholder="Informe o seu nome">
+        <br><br>
+        <select id="opcao" onChange="FuncaoOnChange()">
+            <option value="Desenvolvimento Web"> Desenvolvimento Web</option>
+            <option value="Desenvolvimento Android"> Desenvolvimento Android</option>
+            <option value="Sistema Operacional"> Sistema Operacional</option>
+            <option value="Programação JAVA"> Programação JAVA</option>
+        </select>
+        <p id="texto_aqui"></p>
+        <input type="text" name="focus" id="focus" onfocus="FuncaoFocus(this.id)" placeholder="Deixe o seu comentário">
+        <br><br><br>
+        <button onClick="ParaCINZA()">Mudar a cor de fundo da página para "CINZA"</button>
+        <br><br>
+        <button onClick="ParaBRANCO()">Mudar a cor de fundo da página para "BRANCO"</button>
+        <br><br>
+        <object data="AmbientesInternet.pdf" type="application.pdf" width="500" height="300"></object>
+    </div>
+    <script>
+        function FuncaoBlur(){
+            let x = document.getElementById("blur");
+            x.value=x.value.toUpperCase();
+        }
+        function FuncaoOnChange(){
+            let x = document.getElementById("opcao").value;
+            document.getElementById("texto_aqui").innerHTML="Você selecionou: "+x;
+        }
+        function FuncaoFocus(x){
+            document.getElementById(x).style.background="YELLOW";
+        }
+        function ParaCINZA(){
+            document.body.style.background="GRAY";
+        }
+        function ParaBRANCO(){
+            document.body.style.background="WHITE";
+        }
+    </script>
+</body>
+</html>
